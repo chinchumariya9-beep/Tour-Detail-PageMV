@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14 Days Grand Tour of Rajasthan | Mathew Voyages</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f4f7f6',
+                            100: '#e4ebe8',
+                            500: '#4a7c59',
+                            600: '#3d6649',
+                            900: '#1a2e21',
+                        }
+                    },
+                    animation: {
+                        'scroll': 'scroll-left 25s linear infinite',
+                        'scroll-slow': 'scroll-left 35s linear infinite',
+                    },
+                    keyframes: {
+                        'scroll-left': {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+        }
+        .smooth-transition {
+            transition: all 0.3s ease;
+        }
+        .hero-tour-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1599661559882-6287c89f5bc3?q=80&w=2940&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Hide scrollbar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .scrolling-wrapper:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Sticky Header -->
+    <header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer">
+                    <img class="h-14 w-auto" src="https://lindeavecmathew.com/wp-content/uploads/2026/02/Mvlogo-web.jpg" alt="Mathew Voyages">
+                </div>
+                
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#" class="text-brand-900 font-semibold border-b-2 border-brand-900 pb-1 text-sm" data-i18n="nav_dest">Destinations</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-500 font-medium smooth-transition text-sm" data-i18n="nav_depart">When and how to depart</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-500 font-medium smooth-transition text-sm" data-i18n="nav_vision">Vision</a>
+                    <a href="#" class="text-gray-600 hover:text-brand-500 font-medium smooth-transition text-sm" data-i18n="nav_about">About us</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center space-x-5">
+                    <!-- Contact Icons -->
+                    <a href="#" class="text-gray-600 hover:text-brand-900 smooth-transition">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 hover:text-brand-900 smooth-transition">
+                        <i class="far fa-envelope text-xl"></i>
+                    </a>
+                    
+                    <!-- Language Switcher -->
+                    <button id="langToggle" class="text-sm font-semibold text-gray-700 bg-gray-100 px-4 py-2 rounded-full hover:bg-gray-200 smooth-transition focus:outline-none">
+                        EN / <span class="text-gray-400">FR</span>
+                    </button>
+                    <!-- CTA -->
+                    <a href="#booking-form" class="hidden md:inline-flex bg-brand-900 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-brand-600 smooth-transition shadow-md" data-i18n="nav_cta">
+                        Create Trip
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tour Hero Section -->
+    <section class="relative pt-24 pb-12 hero-tour-bg h-[60vh] flex items-end">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-10">
+            <!-- Breadcrumbs -->
+            <nav class="text-sm text-gray-300 mb-4 flex items-center space-x-2 font-medium">
+                <a href="#" class="hover:text-white smooth-transition" data-i18n="bread_home">Home</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <a href="#" class="hover:text-white smooth-transition" data-i18n="bread_dest">Destinations</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <a href="#" class="hover:text-white smooth-transition" data-i18n="bread_india">India</a>
+                <i class="fas fa-chevron-right text-xs"></i>
+                <span class="text-white" data-i18n="bread_tour">Rajasthan</span>
+            </nav>
+            
+            <span class="bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 inline-block" data-i18n="badge_best">Best Seller</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-4 drop-shadow-lg" data-i18n="tour_title">
+                Grand Tour of Rajasthan
+            </h1>
+            <p class="text-lg text-gray-200 font-light max-w-2xl drop-shadow-md" data-i18n="tour_sub">
+                Palaces, deserts, and vibrant colors. A complete 14-day immersion into the land of Kings.
+            </p>
+        </div>
+    </section>
+
+    <!-- Quick Info Bar -->
+    <div class="bg-white shadow-sm border-b border-gray-200 sticky top-20 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-center py-4 gap-4">
+                <div class="flex items-center space-x-8 overflow-x-auto no-scrollbar w-full md:w-auto">
+                    <div class="flex items-center text-gray-700 min-w-max">
+                        <i class="far fa-clock text-brand-500 text-xl mr-3"></i>
+                        <div>
+                            <p class="text-xs text-gray-500 uppercase font-bold" data-i18n="lbl_duration">Duration</p>
+                            <p class="font-semibold text-sm" data-i18n="val_duration">14 Days / 13 Nights</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-gray-700 min-w-max">
+                        <i class="fas fa-sun text-brand-500 text-xl mr-3"></i>
+                        <div>
+                            <p class="text-xs text-gray-500 uppercase font-bold" data-i18n="lbl_best_time">Best Time to Visit</p>
+                            <p class="font-semibold text-sm" data-i18n="val_best_time">October to March</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center text-gray-700 min-w-max">
+                        <i class="fas fa-car-side text-brand-500 text-xl mr-3"></i>
+                        <div>
+                            <p class="text-xs text-gray-500 uppercase font-bold" data-i18n="lbl_style">Travel Style</p>
+                            <p class="font-semibold text-sm" data-i18n="val_style">Private Car & Driver</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-right hidden lg:block">
+                    <p class="text-xs text-gray-500 font-bold uppercase" data-i18n="lbl_price_from">From</p>
+                    <p class="text-2xl font-bold text-brand-900">€ 1,450 <span class="text-sm font-normal text-gray-500">/ pers</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <section class="py-12 bg-fafafa relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                
+                <!-- Left Column: Tour Details -->
+                <div class="lg:col-span-2 space-y-12">
+                    
+                    <!-- Overview -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="sec_overview">Overview</h2>
+                        <p class="text-gray-600 leading-relaxed mb-4" data-i18n="overview_p1">
+                            Embark on an unforgettable 14-day journey through Rajasthan, the most colorful and culturally rich state of India. From the bustling streets of Old Delhi to the majestic Taj Mahal in Agra, and the sprawling deserts of Jaisalmer, this grand tour covers every iconic landmark.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed" data-i18n="overview_p2">
+                            Stay in heritage havelis, interact with local artisans, enjoy camel safaris at sunset, and witness the architectural brilliance of Rajput forts. Our local experts have meticulously crafted this itinerary to provide a balance of guided sightseeing and relaxed exploration at your own pace.
+                        </p>
+                    </div>
+
+                    <!-- Auto-scrolling Destinations -->
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-4" data-i18n="sec_dest_covered">Destinations Covered</h3>
+                        <div class="overflow-hidden whitespace-nowrap relative w-full rounded-2xl">
+                            <div class="scrolling-wrapper animate-scroll-slow flex gap-4 w-[200%]">
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Delhi</div>
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Agra</div>
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Jaipur</div>
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Bikaner</div>
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Jaisalmer</div>
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Jodhpur</div>
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Udaipur</div>
+                                <!-- Duplicate -->
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Delhi</div>
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Agra</div>
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Jaipur</div>
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Bikaner</div>
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Jaisalmer</div>
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Jodhpur</div>
+                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Udaipur</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Auto-scrolling Photo Gallery -->
+                    <div class="overflow-hidden relative w-full rounded-2xl">
+                        <div class="scrolling-wrapper animate-scroll flex gap-4 w-[200%]">
+                            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
+                            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
+                            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
+                            <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
+                            <!-- Duplicate -->
+                            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
+                            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
+                            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
+                            <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
+                        </div>
+                    </div>
+
+                    <!-- Map Section -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6" data-i18n="sec_map">Route Map</h2>
+                        <div class="w-full bg-white p-2 rounded-3xl shadow-sm border border-gray-100">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.012574041162!2d74.15330362369689!3d26.5824967351654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3969c3725519db8f%3A0x7d6b38c208465d6!2sRajasthan%2C%20India!5e0!3m2!1sen!2sfr!4v1700000000000!5m2!1sen!2sfr" width="100%" height="350" style="border:0; border-radius: 1.25rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- 14-Day Itinerary Timeline -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-8" data-i18n="sec_itinerary">Day-by-Day Itinerary</h2>
+                        
+                        <div class="relative border-l-2 border-brand-100 ml-3 space-y-10 pb-4">
+                            
+                            <!-- Day 1 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_1">Day 1</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_1_title">Arrival in Delhi</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_1_desc">Welcome to India! Upon arrival at Indira Gandhi International Airport, our representative will meet you and transfer you to your hotel. Spend the rest of the day relaxing.</p>
+                            </div>
+
+                            <!-- Day 2 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_2">Day 2</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_2_title">Exploring Old & New Delhi</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_2_desc">Enjoy a guided tour including a rickshaw ride through Chandni Chowk, Jama Masjid, Red Fort, India Gate, and the Qutub Minar.</p>
+                            </div>
+
+                            <!-- Day 3 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_3">Day 3</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_3_title">Delhi to Agra</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_3_desc">Drive to Agra in the morning. Visit the magnificent Agra Fort and witness the breathtaking sunset at the Taj Mahal.</p>
+                            </div>
+
+                            <!-- Day 4 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_4">Day 4</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_4_title">Agra to Jaipur via Fatehpur Sikri</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_4_desc">En route to Jaipur, visit the abandoned Mughal city of Fatehpur Sikri. Arrive in Jaipur and relax in your heritage hotel.</p>
+                            </div>
+                            
+                            <!-- Day 5 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_5">Day 5</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_5_title">Jaipur Sightseeing</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_5_desc">Spend the day exploring Jaipur, including the Amber Fort, City Palace, Jantar Mantar, Hawa Mahal, and local colorful bazaars.</p>
+                            </div>
+
+                            <!-- Day 6 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_6">Day 6</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_6_title">Jaipur to Bikaner</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_6_desc">Drive to the desert city of Bikaner. Visit the impressive Junagarh Fort and walk through the old town's narrow streets.</p>
+                            </div>
+
+                            <!-- Day 7 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_7">Day 7</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_7_title">Bikaner to Jaisalmer</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_7_desc">Travel deeper into the Thar Desert to reach Jaisalmer, the Golden City. Watch the sunset over the golden fort walls.</p>
+                            </div>
+
+                            <!-- Day 8 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_8">Day 8</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_8_title">Jaisalmer & Desert Safari</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_8_desc">Visit Jaisalmer Fort, Patwon ki Haveli, and Gadisar Lake. In the evening, head to the Sam Sand Dunes for a camel safari and dinner.</p>
+                            </div>
+
+                            <!-- Day 9 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_9">Day 9</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_9_title">Jaisalmer to Jodhpur</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_9_desc">Drive to the Blue City, Jodhpur. In the afternoon, explore the local markets around the Clock Tower.</p>
+                            </div>
+
+                            <!-- Day 10 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_10">Day 10</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_10_title">Jodhpur Sightseeing</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_10_desc">Visit the majestic Mehrangarh Fort, offering panoramic views of the blue city, followed by the white marble Jaswant Thada.</p>
+                            </div>
+
+                            <!-- Day 11 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_11">Day 11</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_11_title">Jodhpur to Udaipur via Ranakpur</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_11_desc">Drive to Udaipur. En route, stop at Ranakpur to marvel at the intricately carved 15th-century Jain temples. Arrive in the City of Lakes.</p>
+                            </div>
+
+                            <!-- Day 12 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_12">Day 12</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_12_title">Udaipur City Tour</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_12_desc">Visit the grand City Palace, Jagdish Temple, and Saheliyon Ki Bari. Enjoy a relaxing boat ride on Lake Pichola in the evening.</p>
+                            </div>
+
+                            <!-- Day 13 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_13">Day 13</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_13_title">Fly back to Delhi</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_13_desc">After breakfast, transfer to Udaipur airport for your domestic flight to New Delhi. Spend the evening shopping or relaxing.</p>
+                            </div>
+
+                            <!-- Day 14 -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="flex flex-wrap items-center gap-3 mb-3">
+                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_14">Day 14</span>
+                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_14_title">Departure</h3>
+                                </div>
+                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_14_desc">Transfer to the international airport for your onward flight, carrying a suitcase full of unforgettable memories from Rajasthan.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Inclusions / Exclusions -->
+                    <div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm">
+                        <h2 class="text-2xl font-bold text-gray-900 mb-6" data-i18n="sec_included">What's Included?</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Included -->
+                            <div>
+                                <h3 class="font-bold text-green-700 mb-4 flex items-center gap-2"><i class="fas fa-check-circle"></i> <span data-i18n="lbl_included">Included</span></h3>
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> <span data-i18n="inc_1">13 nights accommodation in heritage hotels</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> <span data-i18n="inc_2">Daily breakfast at all hotels</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> <span data-i18n="inc_3">Private air-conditioned vehicle with a driver</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> <span data-i18n="inc_4">Domestic flight: Udaipur to Delhi</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-check text-green-500 mt-1"></i> <span data-i18n="inc_5">24/7 on-ground assistance</span></li>
+                                </ul>
+                            </div>
+                            <!-- Not Included -->
+                            <div>
+                                <h3 class="font-bold text-red-700 mb-4 flex items-center gap-2"><i class="fas fa-times-circle"></i> <span data-i18n="lbl_not_included">Not Included</span></h3>
+                                <ul class="space-y-3 text-sm text-gray-600">
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i> <span data-i18n="exc_1">International flights</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i> <span data-i18n="exc_2">India Tourist Visa fees</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i> <span data-i18n="exc_3">Lunches and dinners</span></li>
+                                    <li class="flex items-start gap-3"><i class="fas fa-times text-red-500 mt-1"></i> <span data-i18n="exc_4">Entrance fees to monuments</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Column: Sticky Booking Widget & Expert -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-28 space-y-6">
+                        
+                        <!-- Pricing Card -->
+                        <div class="bg-brand-900 text-white rounded-3xl p-8 shadow-xl">
+                            <p class="text-gray-300 text-sm font-bold uppercase tracking-wider mb-2" data-i18n="lbl_price_from">From</p>
+                            <h3 class="text-4xl font-bold mb-1">€ 1,450</h3>
+                            <p class="text-sm text-gray-400 mb-6" data-i18n="lbl_per_person">per person based on 2 travelers</p>
+                            
+                            <ul class="space-y-3 text-sm text-gray-300 mb-8 border-t border-gray-700 pt-6">
+                                <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-500"></i> <span data-i18n="feat_1">100% customizable</span></li>
+                                <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-500"></i> <span data-i18n="feat_2">Free cancellation up to 30 days</span></li>
+                                <li class="flex items-center gap-3"><i class="fas fa-check-circle text-brand-500"></i> <span data-i18n="feat_3">Secure online payment</span></li>
+                            </ul>
+
+                            <a href="#booking-form" class="block text-center w-full bg-white text-brand-900 font-bold py-4 rounded-full shadow-md hover:bg-gray-100 smooth-transition" data-i18n="btn_customize">
+                                Customize this trip
+                            </a>
+                        </div>
+
+                        <!-- Local Expert Card -->
+                        <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm flex flex-col items-center text-center">
+                            <h4 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4" data-i18n="lbl_your_expert">Your Expert for this trip</h4>
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-3 border-2 border-brand-50" alt="Sophie">
+                            <h3 class="text-lg font-bold text-gray-900">Sophie</h3>
+                            <p class="text-xs text-brand-600 font-semibold mb-4" data-i18n="role_sophie">North India Specialist</p>
+                            <p class="text-xs text-gray-500 mb-6" data-i18n="bio_sophie">Based in Delhi, I have designed over 500 trips across Rajasthan ensuring authentic experiences and quality stays.</p>
+                            <a href="#booking-form" class="block w-full border-2 border-brand-900 text-brand-900 font-semibold py-2 rounded-full hover:bg-brand-900 hover:text-white smooth-transition text-sm" data-i18n="btn_contact_sophie">Contact Sophie</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking / Contact Form Section -->
+    <section id="booking-form" class="py-20 bg-brand-50 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4" data-i18n="form_title">Book or Customize This Trip</h2>
+                    <p class="text-gray-600" data-i18n="form_sub">Fill out the form below and our destination expert will get back to you within 24 hours.</p>
+                </div>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_name">Full Name</label>
+                            <input type="text" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 smooth-transition" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_email">Email Address</label>
+                            <input type="email" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 smooth-transition" placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_phone">Phone Number</label>
+                            <input type="tel" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 smooth-transition" placeholder="+1 234 567 8900">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_date">Expected Travel Date</label>
+                            <input type="date" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 smooth-transition text-gray-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_msg">Your Requirements (Optional)</label>
+                        <textarea rows="4" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 smooth-transition" placeholder="Tell us about your preferences..."></textarea>
+                    </div>
+                    <button type="button" class="w-full bg-brand-900 text-white font-bold py-4 rounded-xl shadow-md hover:bg-brand-600 smooth-transition text-lg" data-i18n="form_submit">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Tours Section -->
+    <section class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight" data-i18n="tours_title">Other Popular Itineraries</h2>
+                    <p class="text-gray-600 mt-2" data-i18n="tours_sub">Discover more 100% customizable trips created by our local experts.</p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Tour Card 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl smooth-transition flex flex-col">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?q=80&w=800&auto=format&fit=crop" alt="Tour" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-900" data-i18n="tag_must_see">Must-see</div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight" data-i18n="ft_tour_1_title">The Golden Triangle & Tigers</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2" data-i18n="ft_tour_1_desc">A perfect blend of culture, history, and wildlife in northern India.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <div class="flex items-center text-gray-500 text-sm">
+                                <i class="far fa-clock mr-2"></i>
+                                <span data-i18n="ft_tour_1_dur">12 Days</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs text-gray-400 block" data-i18n="lbl_price_from">From</span>
+                                <span class="text-lg font-bold text-brand-900">€ 1,250</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl smooth-transition flex flex-col">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=800&auto=format&fit=crop" alt="Tour" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-900" data-i18n="tag_off_path">Off the beaten path</div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight" data-i18n="ft_tour_2_title">Hidden Valleys of Ladakh</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2" data-i18n="ft_tour_2_desc">Immerse yourself in Buddhist culture and dramatic mountain landscapes.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <div class="flex items-center text-gray-500 text-sm">
+                                <i class="far fa-clock mr-2"></i>
+                                <span data-i18n="ft_tour_2_dur">15 Days</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs text-gray-400 block" data-i18n="lbl_price_from">From</span>
+                                <span class="text-lg font-bold text-brand-900">€ 1,890</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl smooth-transition flex flex-col">
+                    <div class="relative h-64">
+                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop" alt="Tour" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-brand-900" data-i18n="tag_nature">Nature & Culture</div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight" data-i18n="ft_tour_3_title">Tropical Kerala Escape</h3>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2" data-i18n="ft_tour_3_desc">Houseboats, tea plantations, and authentic Kerala cuisine.</p>
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
+                            <div class="flex items-center text-gray-500 text-sm">
+                                <i class="far fa-clock mr-2"></i>
+                                <span data-i18n="ft_tour_3_dur">10 Days</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-xs text-gray-400 block" data-i18n="lbl_price_from">From</span>
+                                <span class="text-lg font-bold text-brand-900">€ 990</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-gray-100 text-gray-900 px-8 py-3 rounded-full text-sm font-semibold hover:bg-gray-200 smooth-transition" data-i18n="tours_btn">View All Itineraries</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Footer -->
+    <footer class="bg-gray-50 pt-20 pb-10 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
+                <!-- Branding & Contact -->
+                <div class="lg:col-span-2">
+                    <img class="h-10 w-auto mb-4" src="https://lindeavecmathew.com/wp-content/uploads/2026/02/Mvlogo-web.jpg" alt="Mathew Voyages">
+                    <p class="text-sm text-gray-500 mb-6 max-w-sm" data-i18n="footer_desc">Bespoke travel experiences crafted with care by local experts. Authentic, sustainable, unforgettable.</p>
+                    <div class="space-y-2 text-sm text-gray-600">
+                        <p><i class="fas fa-map-marker-alt w-5 text-gray-400"></i> Kerala, India / Paris, France</p>
+                        <p><i class="fas fa-phone w-5 text-gray-400"></i> +91 123 456 7890</p>
+                        <p><i class="fas fa-envelope w-5 text-gray-400"></i> info@mathewvoyages.com</p>
+                    </div>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4" data-i18n="foot_link_1">Destinations</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-brand-600 smooth-transition" data-i18n="dest_india">India</a></li>
+                        <li><a href="#" class="hover:text-brand-600 smooth-transition" data-i18n="dest_srilanka">Sri Lanka</a></li>
+                        <li><a href="#" class="hover:text-brand-600 smooth-transition" data-i18n="dest_nepal">Nepal</a></li>
+                        <li><a href="#" class="hover:text-brand-600 smooth-transition" data-i18n="dest_japan">Japan</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4" data-i18n="foot_link_2">Travel Styles</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-brand-600 smooth-transition" data-i18n="style_wellness">Wellness</a></li>
+                        <li><a href="#" class="hover:text-brand-600 smooth-transition" data-i18n="style_trek">Trekking</a></li>
+                        <li><a href="#" class="hover:text-brand-600 smooth-transition" data-i18n="style_romance">Romance</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 3 -->
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4" data-i18n="foot_link_3">About Us</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-brand-600 smooth-transition" data-i18n="nav_vision">Vision</a></li>
+                        <li><a href="#" class="hover:text-brand-600 smooth-transition" data-i18n="nav_about">About Us</a></li>
+                        <li><a href="#" class="hover:text-brand-600 smooth-transition" data-i18n="foot_sus">Sustainability</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-400">© 2026 Mathew Voyages Pvt Ltd. All rights reserved.</p>
+                <div class="flex space-x-6 text-gray-400">
+                    <a href="#" class="hover:text-brand-600 smooth-transition"><i class="fab fa-instagram text-lg"></i></a>
+                    <a href="#" class="hover:text-brand-600 smooth-transition"><i class="fab fa-facebook-f text-lg"></i></a>
+                </div>
+                <div class="flex space-x-4 text-xs text-gray-400">
+                    <a href="#" class="hover:text-gray-600 smooth-transition" data-i18n="foot_legal">Legal Notice</a>
+                    <a href="#" class="hover:text-gray-600 smooth-transition" data-i18n="foot_privacy">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-600 smooth-transition" data-i18n="foot_terms">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Language Dictionary
+        const translations = {
+            en: {
+                nav_dest: "Destinations", nav_depart: "When and how to depart", nav_vision: "Vision", nav_about: "About us", nav_cta: "Create Trip",
+                bread_home: "Home", bread_dest: "Destinations", bread_india: "India", bread_tour: "Rajasthan",
+                badge_best: "Best Seller",
+                tour_title: "Grand Tour of Rajasthan",
+                tour_sub: "Palaces, deserts, and vibrant colors. A complete 14-day immersion into the land of Kings.",
+                
+                lbl_duration: "Duration", val_duration: "14 Days / 13 Nights",
+                lbl_dest: "Destinations",
+                lbl_best_time: "Best Time to Visit", val_best_time: "October to March",
+                lbl_style: "Travel Style", val_style: "Private Car & Driver",
+                lbl_price_from: "From", lbl_per_person: "per person based on 2 travelers",
+                
+                sec_overview: "Overview",
+                overview_p1: "Embark on an unforgettable 14-day journey through Rajasthan, the most colorful and culturally rich state of India. From the bustling streets of Old Delhi to the majestic Taj Mahal in Agra, and the sprawling deserts of Jaisalmer, this grand tour covers every iconic landmark.",
+                overview_p2: "Stay in heritage havelis, interact with local artisans, enjoy camel safaris at sunset, and witness the architectural brilliance of Rajput forts. Our local experts have meticulously crafted this itinerary to provide a balance of guided sightseeing and relaxed exploration at your own pace.",
+                
+                sec_dest_covered: "Destinations Covered",
+                sec_map: "Route Map",
+                
+                sec_itinerary: "Day-by-Day Itinerary",
+                day_1: "Day 1", day_1_title: "Arrival in Delhi", day_1_desc: "Welcome to India! Upon arrival at Indira Gandhi International Airport, our representative will meet you and transfer you to your hotel. Spend the rest of the day relaxing.",
+                day_2: "Day 2", day_2_title: "Exploring Old & New Delhi", day_2_desc: "Enjoy a guided tour including a rickshaw ride through Chandni Chowk, Jama Masjid, Red Fort, India Gate, and the Qutub Minar.",
+                day_3: "Day 3", day_3_title: "Delhi to Agra", day_3_desc: "Drive to Agra in the morning. Visit the magnificent Agra Fort and witness the breathtaking sunset at the Taj Mahal.",
+                day_4: "Day 4", day_4_title: "Agra to Jaipur via Fatehpur Sikri", day_4_desc: "En route to Jaipur, visit the abandoned Mughal city of Fatehpur Sikri. Arrive in Jaipur and relax in your heritage hotel.",
+                day_5: "Day 5", day_5_title: "Jaipur Sightseeing", day_5_desc: "Spend the day exploring Jaipur, including the Amber Fort, City Palace, Jantar Mantar, Hawa Mahal, and local colorful bazaars.",
+                day_6: "Day 6", day_6_title: "Jaipur to Bikaner", day_6_desc: "Drive to the desert city of Bikaner. Visit the impressive Junagarh Fort and walk through the old town's narrow streets.",
+                day_7: "Day 7", day_7_title: "Bikaner to Jaisalmer", day_7_desc: "Travel deeper into the Thar Desert to reach Jaisalmer, the Golden City. Watch the sunset over the golden fort walls.",
+                day_8: "Day 8", day_8_title: "Jaisalmer & Desert Safari", day_8_desc: "Visit Jaisalmer Fort, Patwon ki Haveli, and Gadisar Lake. In the evening, head to the Sam Sand Dunes for a camel safari and dinner.",
+                day_9: "Day 9", day_9_title: "Jaisalmer to Jodhpur", day_9_desc: "Drive to the Blue City, Jodhpur. In the afternoon, explore the local markets around the Clock Tower.",
+                day_10: "Day 10", day_10_title: "Jodhpur Sightseeing", day_10_desc: "Visit the majestic Mehrangarh Fort, offering panoramic views of the blue city, followed by the white marble Jaswant Thada.",
+                day_11: "Day 11", day_11_title: "Jodhpur to Udaipur via Ranakpur", day_11_desc: "Drive to Udaipur. En route, stop at Ranakpur to marvel at the intricately carved 15th-century Jain temples. Arrive in the City of Lakes.",
+                day_12: "Day 12", day_12_title: "Udaipur City Tour", day_12_desc: "Visit the grand City Palace, Jagdish Temple, and Saheliyon Ki Bari. Enjoy a relaxing boat ride on Lake Pichola in the evening.",
+                day_13: "Day 13", day_13_title: "Fly back to Delhi", day_13_desc: "After breakfast, transfer to Udaipur airport for your domestic flight to New Delhi. Spend the evening shopping or relaxing.",
+                day_14: "Day 14", day_14_title: "Departure", day_14_desc: "Transfer to the international airport for your onward flight, carrying a suitcase full of unforgettable memories from Rajasthan.",
+                btn_full_itinerary: "Download Full PDF Itinerary",
+                
+                sec_included: "What's Included?",
+                lbl_included: "Included", lbl_not_included: "Not Included",
+                inc_1: "13 nights accommodation in heritage hotels", inc_2: "Daily breakfast at all hotels", inc_3: "Private air-conditioned vehicle with a driver", inc_4: "Domestic flight: Udaipur to Delhi", inc_5: "24/7 on-ground assistance",
+                exc_1: "International flights", exc_2: "India Tourist Visa fees", exc_3: "Lunches and dinners", exc_4: "Entrance fees to monuments",
+                
+                feat_1: "100% customizable", feat_2: "Free cancellation up to 30 days", feat_3: "Secure online payment",
+                btn_customize: "Customize this trip",
+                
+                lbl_your_expert: "Your Expert for this trip",
+                role_sophie: "North India Specialist", bio_sophie: "Based in Delhi, I have designed over 500 trips across Rajasthan ensuring authentic experiences and quality stays.",
+                btn_contact_sophie: "Contact Sophie",
+
+                // Booking Form
+                form_title: "Book or Customize This Trip",
+                form_sub: "Fill out the form below and our destination expert will get back to you within 24 hours.",
+                form_name: "Full Name", form_email: "Email Address", form_phone: "Phone Number", form_date: "Expected Travel Date",
+                form_msg: "Your Requirements (Optional)", form_submit: "Send Inquiry",
+
+                // Featured Tours
+                tours_title: "Other Popular Itineraries",
+                tours_sub: "Discover more 100% customizable trips created by our local experts.",
+                tag_must_see: "Must-see", tag_off_path: "Off the beaten path", tag_nature: "Nature & Culture",
+                ft_tour_1_title: "The Golden Triangle & Tigers", ft_tour_1_desc: "A perfect blend of culture, history, and wildlife in northern India.", ft_tour_1_dur: "12 Days",
+                ft_tour_2_title: "Hidden Valleys of Ladakh", ft_tour_2_desc: "Immerse yourself in Buddhist culture and dramatic mountain landscapes.", ft_tour_2_dur: "15 Days",
+                ft_tour_3_title: "Tropical Kerala Escape", ft_tour_3_desc: "Houseboats, tea plantations, and authentic Kerala cuisine.", ft_tour_3_dur: "10 Days",
+                tours_btn: "View All Itineraries",
+
+                footer_desc: "Bespoke travel experiences crafted with care by local experts. Authentic, sustainable, unforgettable.",
+                foot_link_1: "Destinations", foot_link_2: "Travel Styles", foot_link_3: "About Us",
+                dest_india: "India", dest_srilanka: "Sri Lanka", dest_nepal: "Nepal", dest_japan: "Japan",
+                style_wellness: "Wellness", style_trek: "Trekking", style_romance: "Romance",
+                foot_sus: "Sustainability", foot_legal: "Legal Notice", foot_privacy: "Privacy Policy", foot_terms: "Terms & Conditions"
+            },
+            fr: {
+                nav_dest: "Destinations", nav_depart: "Quand et comment partir", nav_vision: "Vision", nav_about: "À propos", nav_cta: "Créer un voyage",
+                bread_home: "Accueil", bread_dest: "Destinations", bread_india: "Inde", bread_tour: "Rajasthan",
+                badge_best: "Meilleure Vente",
+                tour_title: "Grand Tour du Rajasthan",
+                tour_sub: "Palais, déserts et couleurs vibrantes. Une immersion complète de 14 jours au pays des rois.",
+                
+                lbl_duration: "Durée", val_duration: "14 Jours / 13 Nuits",
+                lbl_dest: "Destinations",
+                lbl_best_time: "Meilleure Période", val_best_time: "Octobre à Mars",
+                lbl_style: "Style de Voyage", val_style: "Voiture Privée & Chauffeur",
+                lbl_price_from: "À partir de", lbl_per_person: "par personne (sur base de 2 pers.)",
+                
+                sec_overview: "Aperçu",
+                overview_p1: "Embarquez pour un voyage inoubliable de 14 jours à travers le Rajasthan, l'état le plus coloré et le plus riche culturellement d'Inde. Des rues animées du Vieux Delhi au majestueux Taj Mahal à Agra, en passant par les vastes déserts de Jaisalmer, ce grand tour couvre tous les monuments emblématiques.",
+                overview_p2: "Séjournez dans des havelis patrimoniaux, interagissez avec des artisans locaux, profitez de safaris à dos de chameau au coucher du soleil et admirez la brillance architecturale des forts rajpoutes. Nos experts ont méticuleusement conçu cet itinéraire pour offrir un équilibre parfait.",
+                
+                sec_dest_covered: "Destinations Incluses",
+                sec_map: "Carte de l'itinéraire",
+                
+                sec_itinerary: "Itinéraire Jour par Jour",
+                day_1: "Jour 1", day_1_title: "Arrivée à Delhi", day_1_desc: "Bienvenue en Inde ! À votre arrivée à l'aéroport international Indira Gandhi, notre représentant vous accueillera et vous transférera à votre hôtel. Profitez du reste de la journée pour vous reposer.",
+                day_2: "Jour 2", day_2_title: "Exploration de Old & New Delhi", day_2_desc: "Profitez d'une visite guidée comprenant une balade en rickshaw, une visite de la Jama Masjid, du Fort Rouge et du Qutub Minar.",
+                day_3: "Jour 3", day_3_title: "Delhi à Agra", day_3_desc: "Route vers Agra le matin. Visite du magnifique Fort d'Agra. En fin d'après-midi, assistez au coucher de soleil époustouflant au Taj Mahal.",
+                day_4: "Jour 4", day_4_title: "Agra à Jaipur via Fatehpur Sikri", day_4_desc: "En route vers Jaipur, visitez la ville abandonnée de Fatehpur Sikri. Arrivée à Jaipur et repos dans votre hôtel.",
+                day_5: "Jour 5", day_5_title: "Visite de Jaipur", day_5_desc: "Passez la journée à explorer Jaipur, y compris le Fort d'Amber, le City Palace, le Hawa Mahal et les marchés locaux.",
+                day_6: "Jour 6", day_6_title: "Jaipur à Bikaner", day_6_desc: "Route vers la ville désertique de Bikaner. Visite de l'impressionnant Fort de Junagarh et promenade dans la vieille ville.",
+                day_7: "Jour 7", day_7_title: "Bikaner à Jaisalmer", day_7_desc: "Voyagez plus profondément dans le désert du Thar pour atteindre Jaisalmer, la ville d'or. Admirez le coucher de soleil sur le fort.",
+                day_8: "Jour 8", day_8_title: "Jaisalmer & Safari dans le désert", day_8_desc: "Visite du Fort de Jaisalmer et du lac Gadisar. Le soir, safari à dos de chameau dans les dunes de Sam.",
+                day_9: "Jour 9", day_9_title: "Jaisalmer à Jodhpur", day_9_desc: "Route vers la ville bleue, Jodhpur. L'après-midi, explorez les marchés locaux autour de la Tour de l'Horloge.",
+                day_10: "Jour 10", day_10_title: "Visite de Jodhpur", day_10_desc: "Visite du majestueux Fort de Mehrangarh, offrant des vues panoramiques, suivi du Jaswant Thada.",
+                day_11: "Jour 11", day_11_title: "Jodhpur à Udaipur via Ranakpur", day_11_desc: "Route vers Udaipur avec un arrêt aux temples jaïns de Ranakpur finement sculptés. Arrivée à la Cité des Lacs.",
+                day_12: "Jour 12", day_12_title: "Visite d'Udaipur", day_12_desc: "Visite du grand City Palace et promenade relaxante en bateau sur le lac Pichola en soirée.",
+                day_13: "Jour 13", day_13_title: "Vol retour vers Delhi", day_13_desc: "Après le petit-déjeuner, transfert à l'aéroport pour votre vol intérieur vers New Delhi. Soirée libre.",
+                day_14: "Jour 14", day_14_title: "Départ", day_14_desc: "Transfert à l'aéroport international pour votre vol retour, avec une valise pleine de souvenirs inoubliables.",
+                btn_full_itinerary: "Télécharger l'itinéraire complet en PDF",
+                
+                sec_included: "Ce qui est Inclus ?",
+                lbl_included: "Inclus", lbl_not_included: "Non Inclus",
+                inc_1: "13 nuits d'hébergement dans des hôtels de charme", inc_2: "Petit-déjeuner quotidien", inc_3: "Véhicule privé climatisé avec chauffeur", inc_4: "Vol intérieur: Udaipur à Delhi", inc_5: "Assistance sur place 24/7",
+                exc_1: "Vols internationaux", exc_2: "Frais de Visa", exc_3: "Déjeuners et Dîners", exc_4: "Frais d'entrée aux monuments",
+                
+                feat_1: "100% personnalisable", feat_2: "Annulation gratuite jusqu'à 30 jours", feat_3: "Paiement en ligne sécurisé",
+                btn_customize: "Personnaliser ce voyage",
+                
+                lbl_your_expert: "Votre Expert pour ce voyage",
+                role_sophie: "Spécialiste Inde du Nord", bio_sophie: "Basée à Delhi, j'ai conçu plus de 500 voyages à travers le Rajasthan, garantissant des expériences authentiques.",
+                btn_contact_sophie: "Contacter Sophie",
+
+                // Booking Form
+                form_title: "Réservez ou personnalisez ce voyage",
+                form_sub: "Remplissez le formulaire ci-dessous et notre expert vous contactera dans les 24 heures.",
+                form_name: "Nom complet", form_email: "Adresse e-mail", form_phone: "Numéro de téléphone", form_date: "Date de voyage prévue",
+                form_msg: "Vos besoins (Facultatif)", form_submit: "Envoyer la demande",
+
+                // Featured Tours
+                tours_title: "Autres Itinéraires Populaires",
+                tours_sub: "Découvrez d'autres voyages 100% personnalisables créés par nos experts locaux.",
+                tag_must_see: "Incontournables", tag_off_path: "Hors des sentiers battus", tag_nature: "Nature & Culture",
+                ft_tour_1_title: "Le Triangle d'Or et les Tigres", ft_tour_1_desc: "Un mélange parfait de culture, d'histoire et de vie sauvage dans le nord de l'Inde.", ft_tour_1_dur: "12 Jours",
+                ft_tour_2_title: "Vallées Cachées du Ladakh", ft_tour_2_desc: "Plongez dans la culture bouddhiste et les paysages de montagne dramatiques.", ft_tour_2_dur: "15 Jours",
+                ft_tour_3_title: "Escapade Tropicale au Kerala", ft_tour_3_desc: "Houseboats, plantations de thé et cuisine authentique du Kerala.", ft_tour_3_dur: "10 Jours",
+                tours_btn: "Voir Tous les Itinéraires",
+
+                footer_desc: "Des expériences de voyage sur mesure conçues avec soin par des experts locaux.",
+                foot_link_1: "Destinations", foot_link_2: "Styles de Voyage", foot_link_3: "À Propos",
+                dest_india: "Inde", dest_srilanka: "Sri Lanka", dest_nepal: "Népal", dest_japan: "Japon",
+                style_wellness: "Bien-être", style_trek: "Trekking", style_romance: "Romance",
+                foot_sus: "Durabilité", foot_legal: "Mentions Légales", foot_privacy: "Politique de Confidentialité", foot_terms: "Conditions Générales"
+            }
+        };
+
+        // Language Toggle Logic
+        let currentLang = 'en';
+        const langToggleBtn = document.getElementById('langToggle');
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'fr' : 'en';
+            
+            if(currentLang === 'en') {
+                langToggleBtn.innerHTML = 'EN / <span class="text-gray-400">FR</span>';
+            } else {
+                langToggleBtn.innerHTML = '<span class="text-gray-400">EN</span> / FR';
+            }
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(translations[currentLang][key]) {
+                    if (el.tagName.toLowerCase() === 'input' || el.tagName.toLowerCase() === 'textarea') {
+                        el.placeholder = translations[currentLang][key];
+                    } else {
+                        el.textContent = translations[currentLang][key];
+                    }
+                }
+            });
+        }
+
+        langToggleBtn.addEventListener('click', toggleLanguage);
+    </script>
+</body>
+</html>
