@@ -32,7 +32,6 @@
                     },
                     animation: {
                         'scroll': 'scroll-left 25s linear infinite',
-                        'scroll-slow': 'scroll-left 35s linear infinite',
                     },
                     keyframes: {
                         'scroll-left': {
@@ -59,13 +58,20 @@
             background-size: cover;
             background-position: center;
         }
-        /* Hide scrollbar */
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+        /* Custom horizontal scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 6px;
         }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
         }
         .scrolling-wrapper:hover {
             animation-play-state: paused;
@@ -142,7 +148,7 @@
     <div class="bg-white shadow-sm border-b border-gray-200 sticky top-20 z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-between items-center py-4 gap-4">
-                <div class="flex items-center space-x-8 overflow-x-auto no-scrollbar w-full md:w-auto">
+                <div class="flex items-center space-x-8 overflow-x-auto custom-scrollbar w-full md:w-auto">
                     <div class="flex items-center text-gray-700 min-w-max">
                         <i class="far fa-clock text-brand-500 text-xl mr-3"></i>
                         <div>
@@ -184,34 +190,69 @@
                     <!-- Overview -->
                     <div>
                         <h2 class="text-2xl font-bold text-gray-900 mb-4" data-i18n="sec_overview">Overview</h2>
-                        <p class="text-gray-600 leading-relaxed mb-4" data-i18n="overview_p1">
+                        <p class="text-gray-600 leading-relaxed mb-4 text-justify" data-i18n="overview_p1">
                             Embark on an unforgettable 14-day journey through Rajasthan, the most colorful and culturally rich state of India. From the bustling streets of Old Delhi to the majestic Taj Mahal in Agra, and the sprawling deserts of Jaisalmer, this grand tour covers every iconic landmark.
                         </p>
-                        <p class="text-gray-600 leading-relaxed" data-i18n="overview_p2">
+                        <p class="text-gray-600 leading-relaxed text-justify" data-i18n="overview_p2">
                             Stay in heritage havelis, interact with local artisans, enjoy camel safaris at sunset, and witness the architectural brilliance of Rajput forts. Our local experts have meticulously crafted this itinerary to provide a balance of guided sightseeing and relaxed exploration at your own pace.
                         </p>
                     </div>
 
-                    <!-- Auto-scrolling Destinations -->
+                    <!-- Viewer-Controlled Manual Scroll Destinations Covered -->
                     <div>
-                        <h3 class="text-lg font-bold text-gray-900 mb-4" data-i18n="sec_dest_covered">Destinations Covered</h3>
-                        <div class="overflow-hidden whitespace-nowrap relative w-full rounded-2xl">
-                            <div class="scrolling-wrapper animate-scroll-slow flex gap-4 w-[200%]">
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Delhi</div>
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Agra</div>
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Jaipur</div>
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Bikaner</div>
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Jaisalmer</div>
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Jodhpur</div>
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Udaipur</div>
-                                <!-- Duplicate -->
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Delhi</div>
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Agra</div>
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Jaipur</div>
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Bikaner</div>
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Jaisalmer</div>
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Jodhpur</div>
-                                <div class="bg-white border border-gray-100 rounded-xl px-6 py-3 shadow-sm inline-flex items-center gap-2 font-semibold text-gray-700"><i class="fas fa-map-marker-alt text-brand-500"></i> Udaipur</div>
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-bold text-gray-900" data-i18n="sec_dest_covered">Destinations Covered</h3>
+                            <span class="text-xs text-gray-400 font-medium"><i class="fas fa-arrows-left-right mr-1"></i> Scroll horizontally</span>
+                        </div>
+                        <div class="flex gap-4 overflow-x-auto pb-4 custom-scrollbar">
+                            <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm min-w-[160px] flex-shrink-0 flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=200&auto=format&fit=crop" class="w-12 h-12 rounded-xl object-cover" alt="Delhi">
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-900">Delhi</h4>
+                                    <p class="text-xs text-brand-600 font-medium">Days 1-2</p>
+                                </div>
+                            </div>
+                            <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm min-w-[160px] flex-shrink-0 flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=200&auto=format&fit=crop" class="w-12 h-12 rounded-xl object-cover" alt="Agra">
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-900">Agra</h4>
+                                    <p class="text-xs text-brand-600 font-medium">Days 3-4</p>
+                                </div>
+                            </div>
+                            <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm min-w-[160px] flex-shrink-0 flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1599661559882-6287c89f5bc3?q=80&w=200&auto=format&fit=crop" class="w-12 h-12 rounded-xl object-cover" alt="Jaipur">
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-900">Jaipur</h4>
+                                    <p class="text-xs text-brand-600 font-medium">Days 4-6</p>
+                                </div>
+                            </div>
+                            <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm min-w-[160px] flex-shrink-0 flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1597040663342-45b6af3d91a3?q=80&w=200&auto=format&fit=crop" class="w-12 h-12 rounded-xl object-cover" alt="Bikaner">
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-900">Bikaner</h4>
+                                    <p class="text-xs text-brand-600 font-medium">Days 6-7</p>
+                                </div>
+                            </div>
+                            <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm min-w-[160px] flex-shrink-0 flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=200&auto=format&fit=crop" class="w-12 h-12 rounded-xl object-cover" alt="Jaisalmer">
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-900">Jaisalmer</h4>
+                                    <p class="text-xs text-brand-600 font-medium">Days 7-9</p>
+                                </div>
+                            </div>
+                            <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm min-w-[160px] flex-shrink-0 flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=200&auto=format&fit=crop" class="w-12 h-12 rounded-xl object-cover" alt="Jodhpur">
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-900">Jodhpur</h4>
+                                    <p class="text-xs text-brand-600 font-medium">Days 9-11</p>
+                                </div>
+                            </div>
+                            <div class="bg-white border border-gray-100 rounded-2xl p-4 shadow-sm min-w-[160px] flex-shrink-0 flex items-center gap-3">
+                                <img src="https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?q=80&w=200&auto=format&fit=crop" class="w-12 h-12 rounded-xl object-cover" alt="Udaipur">
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-900">Udaipur</h4>
+                                    <p class="text-xs text-brand-600 font-medium">Days 11-13</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -219,15 +260,15 @@
                     <!-- Auto-scrolling Photo Gallery -->
                     <div class="overflow-hidden relative w-full rounded-2xl">
                         <div class="scrolling-wrapper animate-scroll flex gap-4 w-[200%]">
-                            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
-                            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
-                            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
-                            <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
+                            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block" alt="Agra">
+                            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block" alt="Jaisalmer">
+                            <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block" alt="Jodhpur">
+                            <img src="https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block" alt="Udaipur">
                             <!-- Duplicate -->
-                            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
-                            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
-                            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
-                            <img src="https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block">
+                            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block" alt="Agra">
+                            <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block" alt="Jaisalmer">
+                            <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block" alt="Jodhpur">
+                            <img src="https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?q=80&w=400&auto=format&fit=crop" class="h-48 w-72 object-cover rounded-2xl shadow-sm inline-block" alt="Udaipur">
                         </div>
                     </div>
 
@@ -239,153 +280,256 @@
                         </div>
                     </div>
 
-                    <!-- 14-Day Itinerary Timeline -->
+                    <!-- 14-Day Itinerary with Side Images & Justified Text -->
                     <div>
                         <h2 class="text-2xl font-bold text-gray-900 mb-8" data-i18n="sec_itinerary">Day-by-Day Itinerary</h2>
                         
-                        <div class="relative border-l-2 border-brand-100 ml-3 space-y-10 pb-4">
+                        <div class="relative border-l-2 border-brand-100 ml-3 space-y-8 pb-4">
                             
                             <!-- Day 1 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_1">Day 1</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_1_title">Arrival in Delhi</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Delhi">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_1">Day 1</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_1_title">Arrival in Delhi</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_1_desc">Welcome to India! Upon arrival at Indira Gandhi International Airport, our representative will meet you and transfer you to your hotel. Spend the rest of the day relaxing and recovering from your journey.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_1_desc">Welcome to India! Upon arrival at Indira Gandhi International Airport, our representative will meet you and transfer you to your hotel. Spend the rest of the day relaxing.</p>
                             </div>
 
                             <!-- Day 2 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_2">Day 2</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_2_title">Exploring Old & New Delhi</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1592635196078-9fdc757f27f4?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="India Gate">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_2">Day 2</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_2_title">Exploring Old & New Delhi</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_2_desc">Enjoy an insightful guided tour including an exhilarating rickshaw ride through the buzzing Chandni Chowk lanes, Jama Masjid, the Red Fort, India Gate, and the UNESCO-listed Qutub Minar.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_2_desc">Enjoy a guided tour including a rickshaw ride through Chandni Chowk, Jama Masjid, Red Fort, India Gate, and the Qutub Minar.</p>
                             </div>
 
                             <!-- Day 3 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_3">Day 3</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_3_title">Delhi to Agra</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Taj Mahal">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_3">Day 3</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_3_title">Delhi to Agra</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_3_desc">Drive comfortably to Agra in the morning. Visit the massive Agra Fort, and in the late afternoon, marvel at the sunset over the marble perfection of the iconic Taj Mahal.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_3_desc">Drive to Agra in the morning. Visit the magnificent Agra Fort and witness the breathtaking sunset at the Taj Mahal.</p>
                             </div>
 
                             <!-- Day 4 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_4">Day 4</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_4_title">Agra to Jaipur via Fatehpur Sikri</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Fatehpur Sikri">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_4">Day 4</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_4_title">Agra to Jaipur via Fatehpur Sikri</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_4_desc">En route to the Pink City of Jaipur, visit the deserted 16th-century ghost town of Fatehpur Sikri. Arrive in Jaipur and unwind in your heritage palace hotel.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_4_desc">En route to Jaipur, visit the abandoned Mughal city of Fatehpur Sikri. Arrive in Jaipur and relax in your heritage hotel.</p>
                             </div>
                             
                             <!-- Day 5 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_5">Day 5</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_5_title">Jaipur Sightseeing</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1599661559882-6287c89f5bc3?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Amber Fort">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_5">Day 5</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_5_title">Jaipur Sightseeing</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_5_desc">Explore Amber Fort, the delicate facade of Hawa Mahal, the City Palace museum, and the astronomical instruments of Jantar Mantar, followed by artisanal shopping.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_5_desc">Spend the day exploring Jaipur, including the Amber Fort, City Palace, Jantar Mantar, Hawa Mahal, and local colorful bazaars.</p>
                             </div>
 
                             <!-- Day 6 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_6">Day 6</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_6_title">Jaipur to Bikaner</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1597040663342-45b6af3d91a3?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Bikaner">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_6">Day 6</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_6_title">Jaipur to Bikaner</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_6_desc">Drive into the desert outpost of Bikaner. Visit the impenetrable Junagarh Fort, adorned with delicate marble lattice, and stroll through the aromatic old markets.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_6_desc">Drive to the desert city of Bikaner. Visit the impressive Junagarh Fort and walk through the old town's narrow streets.</p>
                             </div>
 
                             <!-- Day 7 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_7">Day 7</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_7_title">Bikaner to Jaisalmer</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Jaisalmer Fort">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_7">Day 7</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_7_title">Bikaner to Jaisalmer</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_7_desc">Journey further into the deep Thar Desert toward Jaisalmer, the Golden City. Watch the sandstone fort glow brilliantly against the setting desert sun.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_7_desc">Travel deeper into the Thar Desert to reach Jaisalmer, the Golden City. Watch the sunset over the golden fort walls.</p>
                             </div>
 
                             <!-- Day 8 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_8">Day 8</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_8_title">Jaisalmer & Desert Safari</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Desert Safari">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_8">Day 8</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_8_title">Jaisalmer & Desert Safari</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_8_desc">Tour the living Jaisalmer Fort and the Patwon ki Haveli. In the late afternoon, head to Sam Sand Dunes for an enchanting sunset camel safari and folk music.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_8_desc">Visit Jaisalmer Fort, Patwon ki Haveli, and Gadisar Lake. In the evening, head to the Sam Sand Dunes for a camel safari and dinner.</p>
                             </div>
 
                             <!-- Day 9 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_9">Day 9</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_9_title">Jaisalmer to Jodhpur</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Jodhpur">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_9">Day 9</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_9_title">Jaisalmer to Jodhpur</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_9_desc">Drive across scenic rural arid plains to Jodhpur, the famous Blue City. In the evening, explore the vibrant spice and textile bazaars around the Clock Tower.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_9_desc">Drive to the Blue City, Jodhpur. In the afternoon, explore the local markets around the Clock Tower.</p>
                             </div>
 
                             <!-- Day 10 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_10">Day 10</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_10_title">Jodhpur Sightseeing</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Mehrangarh Fort">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_10">Day 10</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_10_title">Jodhpur Sightseeing</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_10_desc">Visit the mighty Mehrangarh Fort perched on a cliff, offering breathtaking views of indigo-painted rooftops, followed by Jaswant Thada's serene white marble cenotaphs.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_10_desc">Visit the majestic Mehrangarh Fort, offering panoramic views of the blue city, followed by the white marble Jaswant Thada.</p>
                             </div>
 
                             <!-- Day 11 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_11">Day 11</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_11_title">Jodhpur to Udaipur via Ranakpur</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1600100397608-f010f443b740?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Ranakpur">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_11">Day 11</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_11_title">Jodhpur to Udaipur via Ranakpur</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_11_desc">Drive toward Udaipur, pausing at the secluded Ranakpur temples to admire 1,444 uniquely hand-carved marble pillars. Arrive in the romantic City of Lakes.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_11_desc">Drive to Udaipur. En route, stop at Ranakpur to marvel at the intricately carved 15th-century Jain temples. Arrive in the City of Lakes.</p>
                             </div>
 
                             <!-- Day 12 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_12">Day 12</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_12_title">Udaipur City Tour</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1615836245337-f5b9b2303f10?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Lake Pichola">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_12">Day 12</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_12_title">Udaipur City Tour</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_12_desc">Tour the majestic Udaipur City Palace complex and Saheliyon Ki Bari. Complete your day with an unforgettable sunset boat cruise across the shimmering waters of Lake Pichola.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_12_desc">Visit the grand City Palace, Jagdish Temple, and Saheliyon Ki Bari. Enjoy a relaxing boat ride on Lake Pichola in the evening.</p>
                             </div>
 
                             <!-- Day 13 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_13">Day 13</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_13_title">Fly back to Delhi</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Flight">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_13">Day 13</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_13_title">Fly back to Delhi</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_13_desc">Transfer to Udaipur airport for your short domestic flight back to Delhi. Spend a relaxed evening indulging in fine dining or last-minute souvenir shopping.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_13_desc">After breakfast, transfer to Udaipur airport for your domestic flight to New Delhi. Spend the evening shopping or relaxing.</p>
                             </div>
 
                             <!-- Day 14 -->
                             <div class="relative pl-8">
-                                <div class="absolute -left-3.5 top-1 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm flex items-center justify-center"></div>
-                                <div class="flex flex-wrap items-center gap-3 mb-3">
-                                    <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_14">Day 14</span>
-                                    <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_14_title">Departure</h3>
+                                <div class="absolute -left-3.5 top-5 bg-brand-500 w-7 h-7 rounded-full border-4 border-white shadow-sm"></div>
+                                <div class="bg-white p-5 rounded-3xl border border-gray-100 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=400&auto=format&fit=crop" class="w-full md:w-44 h-32 object-cover rounded-2xl flex-shrink-0" alt="Departure">
+                                    <div class="flex-1">
+                                        <div class="flex flex-wrap items-center gap-3 mb-2">
+                                            <span class="bg-brand-100 text-brand-900 text-xs font-bold px-3 py-1 rounded-full" data-i18n="day_14">Day 14</span>
+                                            <h3 class="font-bold text-gray-900 text-lg" data-i18n="day_14_title">Departure</h3>
+                                        </div>
+                                        <p class="text-gray-600 text-sm leading-relaxed text-justify" data-i18n="day_14_desc">Transfer to Indira Gandhi International Airport for your homebound flight, carrying indelible memories and friendships from the royal land of Rajasthan.</p>
+                                    </div>
                                 </div>
-                                <p class="text-gray-600 text-sm leading-relaxed" data-i18n="day_14_desc">Transfer to the international airport for your onward flight, carrying a suitcase full of unforgettable memories from Rajasthan.</p>
                             </div>
 
                         </div>
+                    </div>
+
+                    <!-- Compact Booking Form (Placed right after Day-by-day Itinerary) -->
+                    <div id="booking-form" class="bg-brand-50 rounded-3xl p-6 md:p-8 border border-brand-100 shadow-sm">
+                        <div class="mb-5">
+                            <h3 class="text-xl font-bold text-gray-900" data-i18n="form_title">Book or Customize This Trip</h3>
+                            <p class="text-xs text-gray-500 mt-1" data-i18n="form_sub">Fill out the quick form below and our destination expert will get back within 24 hours.</p>
+                        </div>
+                        <form class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-600 mb-1" data-i18n="form_name">Full Name</label>
+                                    <input type="text" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-brand-500" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-600 mb-1" data-i18n="form_email">Email Address</label>
+                                    <input type="email" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-brand-500" placeholder="john@example.com">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-600 mb-1" data-i18n="form_phone">Phone</label>
+                                    <input type="tel" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-brand-500" placeholder="+1 234 567 890">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-600 mb-1" data-i18n="form_date">Travel Date</label>
+                                    <input type="date" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-brand-500 text-gray-600">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-gray-600 mb-1" data-i18n="form_msg">Your Requirements (Optional)</label>
+                                <textarea rows="2" class="w-full bg-white border border-gray-200 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-brand-500" placeholder="Tell us your preferences, group size, or custom requests..."></textarea>
+                            </div>
+                            <button type="button" class="w-full sm:w-auto bg-brand-900 text-white font-bold px-8 py-3 rounded-xl hover:bg-brand-600 smooth-transition text-sm shadow-md" data-i18n="form_submit">Send Inquiry</button>
+                        </form>
                     </div>
 
                     <!-- Inclusions / Exclusions -->
@@ -445,7 +589,7 @@
                             <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop" class="w-20 h-20 rounded-full object-cover mb-3 border-2 border-brand-50" alt="Sophie">
                             <h3 class="text-lg font-bold text-gray-900">Sophie</h3>
                             <p class="text-xs text-brand-600 font-semibold mb-4" data-i18n="role_sophie">North India Specialist</p>
-                            <p class="text-xs text-gray-500 mb-6" data-i18n="bio_sophie">Based in Delhi, I have designed over 500 trips across Rajasthan ensuring authentic experiences and quality stays.</p>
+                            <p class="text-xs text-gray-500 mb-6 text-justify" data-i18n="bio_sophie">Based in Delhi, I have designed over 500 trips across Rajasthan ensuring authentic experiences and quality stays.</p>
                             <a href="#booking-form" class="block w-full border-2 border-brand-900 text-brand-900 font-semibold py-2 rounded-full hover:bg-brand-900 hover:text-white smooth-transition text-sm" data-i18n="btn_contact_sophie">Contact Sophie</a>
                         </div>
 
@@ -456,46 +600,113 @@
         </div>
     </section>
 
-    <!-- Booking / Contact Form Section -->
-    <section id="booking-form" class="py-20 bg-brand-50 border-t border-gray-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100">
-                <div class="text-center mb-10">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4" data-i18n="form_title">Book or Customize This Trip</h2>
-                    <p class="text-gray-600" data-i18n="form_sub">Fill out the form below and our destination expert will get back to you within 24 hours.</p>
+    <!-- Trustpilot Reviews Section -->
+    <section class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center mb-12">
+                <div class="flex text-green-500 text-xl mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                 </div>
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_name">Full Name</label>
-                            <input type="text" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 smooth-transition" placeholder="John Doe">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_email">Email Address</label>
-                            <input type="email" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 smooth-transition" placeholder="john@example.com">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_phone">Phone Number</label>
-                            <input type="tel" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 smooth-transition" placeholder="+1 234 567 8900">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_date">Expected Travel Date</label>
-                            <input type="date" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 smooth-transition text-gray-500">
-                        </div>
-                    </div>
+                <p class="text-gray-900 font-bold text-lg" data-i18n="trust_score">Excellent 4.9/5 based on 3,450 traveler reviews</p>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Trustpilot_logo_%282021%29.svg/512px-Trustpilot_logo_%282021%29.svg.png" class="h-6 mt-3 opacity-60" alt="Trustpilot">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Review 1 -->
+                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 flex flex-col justify-between">
                     <div>
-                        <label class="block text-sm font-semibold text-gray-700 mb-2" data-i18n="form_msg">Your Requirements (Optional)</label>
-                        <textarea rows="4" class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 smooth-transition" placeholder="Tell us about your preferences..."></textarea>
+                        <div class="flex text-green-500 text-sm mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2" data-i18n="rev_1_title">Unforgettable royal experience!</h4>
+                        <p class="text-gray-600 text-sm mb-6 text-justify" data-i18n="rev_1_desc">Every palace hotel was handpicked to perfection. Our private driver Mr. Singh was punctual, kind, and knowledgeable. Highly recommended!</p>
                     </div>
-                    <button type="button" class="w-full bg-brand-900 text-white font-bold py-4 rounded-xl shadow-md hover:bg-brand-600 smooth-transition text-lg" data-i18n="form_submit">Send Inquiry</button>
-                </form>
+                    <p class="text-xs text-gray-400 font-semibold uppercase">Claire & Marc (Paris, France)</p>
+                </div>
+                <!-- Review 2 -->
+                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-green-500 text-sm mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2" data-i18n="rev_2_title">Flawless 14 days in Rajasthan</h4>
+                        <p class="text-gray-600 text-sm mb-6 text-justify" data-i18n="rev_2_desc">Sophie curated the exact balance of monuments and quiet village walks. The sunset desert camp in Jaisalmer was magical.</p>
+                    </div>
+                    <p class="text-xs text-gray-400 font-semibold uppercase">Thomas Laurent (Lyon)</p>
+                </div>
+                <!-- Review 3 -->
+                <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 flex flex-col justify-between">
+                    <div>
+                        <div class="flex text-green-500 text-sm mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2" data-i18n="rev_3_title">Professional & 24/7 attentive</h4>
+                        <p class="text-gray-600 text-sm mb-6 text-justify" data-i18n="rev_3_desc">Traveling as a family can be stressful, but Mathew Voyages took care of everything seamlessly. We always felt safe and pampered.</p>
+                    </div>
+                    <p class="text-xs text-gray-400 font-semibold uppercase">Elena & Julian (Geneva)</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Tours Section -->
+    <!-- Travel Magazine / Rajasthan Blogs Section -->
+    <section class="py-20 bg-brand-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight" data-i18n="mag_title">Travel Magazine: Rajasthan Inspirations</h2>
+                    <p class="text-gray-600 mt-2" data-i18n="mag_sub">Read expert advice, culture guides, and practical travel ideas before your journey.</p>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center text-sm font-semibold text-brand-600 hover:text-brand-900">
+                    <span data-i18n="mag_all">View all articles</span>
+                    <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl smooth-transition group cursor-pointer border border-gray-100 flex flex-col">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1599661559882-6287c89f5bc3?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 smooth-transition" alt="Palaces">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-xs font-bold text-brand-900 px-3 py-1 rounded-full uppercase" data-i18n="blog_1_cat">Heritage Guide</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-600 smooth-transition" data-i18n="blog_1_title">Top 7 Heritage Havelis to Experience in Rajasthan</h3>
+                        <p class="text-sm text-gray-500 mb-4 text-justify" data-i18n="blog_1_desc">Discover historical mansions turned boutique hotels where authentic royal hospitality is still very much alive.</p>
+                        <span class="mt-auto text-xs font-semibold text-brand-600 flex items-center gap-1" data-i18n="read_more">Read Article <i class="fas fa-arrow-right text-[10px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Blog 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl smooth-transition group cursor-pointer border border-gray-100 flex flex-col">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 smooth-transition" alt="Thar Desert">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-xs font-bold text-brand-900 px-3 py-1 rounded-full uppercase" data-i18n="blog_2_cat">Desert Life</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-600 smooth-transition" data-i18n="blog_2_title">A Night in Sam Sand Dunes: Desert Safari Insights</h3>
+                        <p class="text-sm text-gray-500 mb-4 text-justify" data-i18n="blog_2_desc">Everything you need to know about sleeping under Thar's canopy of stars, camel rides, and folk performances.</p>
+                        <span class="mt-auto text-xs font-semibold text-brand-600 flex items-center gap-1" data-i18n="read_more">Read Article <i class="fas fa-arrow-right text-[10px]"></i></span>
+                    </div>
+                </div>
+
+                <!-- Blog 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl smooth-transition group cursor-pointer border border-gray-100 flex flex-col">
+                    <div class="relative h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 smooth-transition" alt="Bazaars">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-xs font-bold text-brand-900 px-3 py-1 rounded-full uppercase" data-i18n="blog_3_cat">Culture & Craft</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-lg font-bold text-gray-900 mb-2 group-hover:text-brand-600 smooth-transition" data-i18n="blog_3_title">The Artisan Trail: Block Prints and Blue Pottery in Jaipur</h3>
+                        <p class="text-sm text-gray-500 mb-4 text-justify" data-i18n="blog_3_desc">Meet traditional artisans and learn where to find genuine hand-printed textiles away from the commercial traps.</p>
+                        <span class="mt-auto text-xs font-semibold text-brand-600 flex items-center gap-1" data-i18n="read_more">Read Article <i class="fas fa-arrow-right text-[10px]"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Popular Itineraries (Featured Tours) -->
     <section class="py-24 bg-white border-t border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12">
@@ -514,7 +725,7 @@
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
                         <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight" data-i18n="ft_tour_1_title">The Golden Triangle & Tigers</h3>
-                        <p class="text-sm text-gray-500 mb-4 line-clamp-2" data-i18n="ft_tour_1_desc">A perfect blend of culture, history, and wildlife in northern India.</p>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2 text-justify" data-i18n="ft_tour_1_desc">A perfect blend of culture, history, and wildlife in northern India.</p>
                         <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
                             <div class="flex items-center text-gray-500 text-sm">
                                 <i class="far fa-clock mr-2"></i>
@@ -536,7 +747,7 @@
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
                         <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight" data-i18n="ft_tour_2_title">Hidden Valleys of Ladakh</h3>
-                        <p class="text-sm text-gray-500 mb-4 line-clamp-2" data-i18n="ft_tour_2_desc">Immerse yourself in Buddhist culture and dramatic mountain landscapes.</p>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2 text-justify" data-i18n="ft_tour_2_desc">Immerse yourself in Buddhist culture and dramatic mountain landscapes.</p>
                         <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
                             <div class="flex items-center text-gray-500 text-sm">
                                 <i class="far fa-clock mr-2"></i>
@@ -558,7 +769,7 @@
                     </div>
                     <div class="p-6 flex-1 flex flex-col">
                         <h3 class="text-lg font-bold text-gray-900 mb-2 leading-tight" data-i18n="ft_tour_3_title">Tropical Kerala Escape</h3>
-                        <p class="text-sm text-gray-500 mb-4 line-clamp-2" data-i18n="ft_tour_3_desc">Houseboats, tea plantations, and authentic Kerala cuisine.</p>
+                        <p class="text-sm text-gray-500 mb-4 line-clamp-2 text-justify" data-i18n="ft_tour_3_desc">Houseboats, tea plantations, and authentic Kerala cuisine.</p>
                         <div class="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
                             <div class="flex items-center text-gray-500 text-sm">
                                 <i class="far fa-clock mr-2"></i>
@@ -586,7 +797,7 @@
                 <!-- Branding & Contact -->
                 <div class="lg:col-span-2">
                     <img class="h-10 w-auto mb-4" src="https://lindeavecmathew.com/wp-content/uploads/2026/02/Mvlogo-web.jpg" alt="Mathew Voyages">
-                    <p class="text-sm text-gray-500 mb-6 max-w-sm" data-i18n="footer_desc">Bespoke travel experiences crafted with care by local experts. Authentic, sustainable, unforgettable.</p>
+                    <p class="text-sm text-gray-500 mb-6 max-w-sm text-justify" data-i18n="footer_desc">Bespoke travel experiences crafted with care by local experts. Authentic, sustainable, unforgettable.</p>
                     <div class="space-y-2 text-sm text-gray-600">
                         <p><i class="fas fa-map-marker-alt w-5 text-gray-400"></i> Kerala, India / Paris, France</p>
                         <p><i class="fas fa-phone w-5 text-gray-400"></i> +91 123 456 7890</p>
@@ -666,21 +877,20 @@
                 sec_map: "Route Map",
                 
                 sec_itinerary: "Day-by-Day Itinerary",
-                day_1: "Day 1", day_1_title: "Arrival in Delhi", day_1_desc: "Welcome to India! Upon arrival at Indira Gandhi International Airport, our representative will meet you and transfer you to your hotel. Spend the rest of the day relaxing.",
-                day_2: "Day 2", day_2_title: "Exploring Old & New Delhi", day_2_desc: "Enjoy a guided tour including a rickshaw ride through Chandni Chowk, Jama Masjid, Red Fort, India Gate, and the Qutub Minar.",
-                day_3: "Day 3", day_3_title: "Delhi to Agra", day_3_desc: "Drive to Agra in the morning. Visit the magnificent Agra Fort and witness the breathtaking sunset at the Taj Mahal.",
-                day_4: "Day 4", day_4_title: "Agra to Jaipur via Fatehpur Sikri", day_4_desc: "En route to Jaipur, visit the abandoned Mughal city of Fatehpur Sikri. Arrive in Jaipur and relax in your heritage hotel.",
-                day_5: "Day 5", day_5_title: "Jaipur Sightseeing", day_5_desc: "Spend the day exploring Jaipur, including the Amber Fort, City Palace, Jantar Mantar, Hawa Mahal, and local colorful bazaars.",
-                day_6: "Day 6", day_6_title: "Jaipur to Bikaner", day_6_desc: "Drive to the desert city of Bikaner. Visit the impressive Junagarh Fort and walk through the old town's narrow streets.",
-                day_7: "Day 7", day_7_title: "Bikaner to Jaisalmer", day_7_desc: "Travel deeper into the Thar Desert to reach Jaisalmer, the Golden City. Watch the sunset over the golden fort walls.",
-                day_8: "Day 8", day_8_title: "Jaisalmer & Desert Safari", day_8_desc: "Visit Jaisalmer Fort, Patwon ki Haveli, and Gadisar Lake. In the evening, head to the Sam Sand Dunes for a camel safari and dinner.",
-                day_9: "Day 9", day_9_title: "Jaisalmer to Jodhpur", day_9_desc: "Drive to the Blue City, Jodhpur. In the afternoon, explore the local markets around the Clock Tower.",
-                day_10: "Day 10", day_10_title: "Jodhpur Sightseeing", day_10_desc: "Visit the majestic Mehrangarh Fort, offering panoramic views of the blue city, followed by the white marble Jaswant Thada.",
-                day_11: "Day 11", day_11_title: "Jodhpur to Udaipur via Ranakpur", day_11_desc: "Drive to Udaipur. En route, stop at Ranakpur to marvel at the intricately carved 15th-century Jain temples. Arrive in the City of Lakes.",
-                day_12: "Day 12", day_12_title: "Udaipur City Tour", day_12_desc: "Visit the grand City Palace, Jagdish Temple, and Saheliyon Ki Bari. Enjoy a relaxing boat ride on Lake Pichola in the evening.",
-                day_13: "Day 13", day_13_title: "Fly back to Delhi", day_13_desc: "After breakfast, transfer to Udaipur airport for your domestic flight to New Delhi. Spend the evening shopping or relaxing.",
-                day_14: "Day 14", day_14_title: "Departure", day_14_desc: "Transfer to the international airport for your onward flight, carrying a suitcase full of unforgettable memories from Rajasthan.",
-                btn_full_itinerary: "Download Full PDF Itinerary",
+                day_1: "Day 1", day_1_title: "Arrival in Delhi", day_1_desc: "Welcome to India! Upon arrival at Indira Gandhi International Airport, our representative will meet you and transfer you to your hotel. Spend the rest of the day relaxing and recovering from your journey.",
+                day_2: "Day 2", day_2_title: "Exploring Old & New Delhi", day_2_desc: "Enjoy an insightful guided tour including an exhilarating rickshaw ride through the buzzing Chandni Chowk lanes, Jama Masjid, the Red Fort, India Gate, and the UNESCO-listed Qutub Minar.",
+                day_3: "Day 3", day_3_title: "Delhi to Agra", day_3_desc: "Drive comfortably to Agra in the morning. Visit the massive Agra Fort, and in the late afternoon, marvel at the sunset over the marble perfection of the iconic Taj Mahal.",
+                day_4: "Day 4", day_4_title: "Agra to Jaipur via Fatehpur Sikri", day_4_desc: "En route to the Pink City of Jaipur, visit the deserted 16th-century ghost town of Fatehpur Sikri. Arrive in Jaipur and unwind in your heritage palace hotel.",
+                day_5: "Day 5", day_5_title: "Jaipur Sightseeing", day_5_desc: "Explore Amber Fort, the delicate facade of Hawa Mahal, the City Palace museum, and the astronomical instruments of Jantar Mantar, followed by artisanal shopping.",
+                day_6: "Day 6", day_6_title: "Jaipur to Bikaner", day_6_desc: "Drive into the desert outpost of Bikaner. Visit the impenetrable Junagarh Fort, adorned with delicate marble lattice, and stroll through the aromatic old markets.",
+                day_7: "Day 7", day_7_title: "Bikaner to Jaisalmer", day_7_desc: "Journey further into the deep Thar Desert toward Jaisalmer, the Golden City. Watch the sandstone fort glow brilliantly against the setting desert sun.",
+                day_8: "Day 8", day_8_title: "Jaisalmer & Desert Safari", day_8_desc: "Tour the living Jaisalmer Fort and the Patwon ki Haveli. In the late afternoon, head to Sam Sand Dunes for an enchanting sunset camel safari and folk music.",
+                day_9: "Day 9", day_9_title: "Jaisalmer to Jodhpur", day_9_desc: "Drive across scenic rural arid plains to Jodhpur, the famous Blue City. In the evening, explore the vibrant spice and textile bazaars around the Clock Tower.",
+                day_10: "Day 10", day_10_title: "Jodhpur Sightseeing", day_10_desc: "Visit the mighty Mehrangarh Fort perched on a cliff, offering breathtaking views of indigo-painted rooftops, followed by Jaswant Thada's serene white marble cenotaphs.",
+                day_11: "Day 11", day_11_title: "Jodhpur to Udaipur via Ranakpur", day_11_desc: "Drive toward Udaipur, pausing at the secluded Ranakpur temples to admire 1,444 uniquely hand-carved marble pillars. Arrive in the romantic City of Lakes.",
+                day_12: "Day 12", day_12_title: "Udaipur City Tour", day_12_desc: "Tour the majestic Udaipur City Palace complex and Saheliyon Ki Bari. Complete your day with an unforgettable sunset boat cruise across the shimmering waters of Lake Pichola.",
+                day_13: "Day 13", day_13_title: "Fly back to Delhi", day_13_desc: "Transfer to Udaipur airport for your short domestic flight back to Delhi. Spend a relaxed evening indulging in fine dining or last-minute souvenir shopping.",
+                day_14: "Day 14", day_14_title: "Departure", day_14_desc: "Transfer to Indira Gandhi International Airport for your homebound flight, carrying indelible memories and friendships from the royal land of Rajasthan.",
                 
                 sec_included: "What's Included?",
                 lbl_included: "Included", lbl_not_included: "Not Included",
@@ -694,15 +904,23 @@
                 role_sophie: "North India Specialist", bio_sophie: "Based in Delhi, I have designed over 500 trips across Rajasthan ensuring authentic experiences and quality stays.",
                 btn_contact_sophie: "Contact Sophie",
 
-                // Booking Form
+                trust_score: "Excellent 4.9/5 based on 3,450 traveler reviews",
+                rev_1_title: "Unforgettable royal experience!", rev_1_desc: "Every palace hotel was handpicked to perfection. Our private driver Mr. Singh was punctual, kind, and knowledgeable. Highly recommended!",
+                rev_2_title: "Flawless 14 days in Rajasthan", rev_2_desc: "Sophie curated the exact balance of monuments and quiet village walks. The sunset desert camp in Jaisalmer was magical.",
+                rev_3_title: "Professional & 24/7 attentive", rev_3_desc: "Traveling as a family can be stressful, but Mathew Voyages took care of everything seamlessly. We always felt safe and pampered.",
+
+                mag_title: "Travel Magazine: Rajasthan Inspirations", mag_sub: "Read expert advice, culture guides, and practical travel ideas before your journey.",
+                mag_all: "View all articles", read_more: "Read Article",
+                blog_1_cat: "Heritage Guide", blog_1_title: "Top 7 Heritage Havelis to Experience in Rajasthan", blog_1_desc: "Discover historical mansions turned boutique hotels where authentic royal hospitality is still very much alive.",
+                blog_2_cat: "Desert Life", blog_2_title: "A Night in Sam Sand Dunes: Desert Safari Insights", blog_2_desc: "Everything you need to know about sleeping under Thar's canopy of stars, camel rides, and folk performances.",
+                blog_3_cat: "Culture & Craft", blog_3_title: "The Artisan Trail: Block Prints and Blue Pottery in Jaipur", blog_3_desc: "Meet traditional artisans and learn where to find genuine hand-printed textiles away from the commercial traps.",
+
                 form_title: "Book or Customize This Trip",
-                form_sub: "Fill out the form below and our destination expert will get back to you within 24 hours.",
-                form_name: "Full Name", form_email: "Email Address", form_phone: "Phone Number", form_date: "Expected Travel Date",
+                form_sub: "Fill out the quick form below and our destination expert will get back within 24 hours.",
+                form_name: "Full Name", form_email: "Email Address", form_phone: "Phone", form_date: "Travel Date",
                 form_msg: "Your Requirements (Optional)", form_submit: "Send Inquiry",
 
-                // Featured Tours
-                tours_title: "Other Popular Itineraries",
-                tours_sub: "Discover more 100% customizable trips created by our local experts.",
+                tours_title: "Other Popular Itineraries", tours_sub: "Discover more 100% customizable trips created by our local experts.",
                 tag_must_see: "Must-see", tag_off_path: "Off the beaten path", tag_nature: "Nature & Culture",
                 ft_tour_1_title: "The Golden Triangle & Tigers", ft_tour_1_desc: "A perfect blend of culture, history, and wildlife in northern India.", ft_tour_1_dur: "12 Days",
                 ft_tour_2_title: "Hidden Valleys of Ladakh", ft_tour_2_desc: "Immerse yourself in Buddhist culture and dramatic mountain landscapes.", ft_tour_2_dur: "15 Days",
@@ -737,20 +955,19 @@
                 
                 sec_itinerary: "Itinéraire Jour par Jour",
                 day_1: "Jour 1", day_1_title: "Arrivée à Delhi", day_1_desc: "Bienvenue en Inde ! À votre arrivée à l'aéroport international Indira Gandhi, notre représentant vous accueillera et vous transférera à votre hôtel. Profitez du reste de la journée pour vous reposer.",
-                day_2: "Jour 2", day_2_title: "Exploration de Old & New Delhi", day_2_desc: "Profitez d'une visite guidée comprenant une balade en rickshaw, une visite de la Jama Masjid, du Fort Rouge et du Qutub Minar.",
-                day_3: "Jour 3", day_3_title: "Delhi à Agra", day_3_desc: "Route vers Agra le matin. Visite du magnifique Fort d'Agra. En fin d'après-midi, assistez au coucher de soleil époustouflant au Taj Mahal.",
-                day_4: "Jour 4", day_4_title: "Agra à Jaipur via Fatehpur Sikri", day_4_desc: "En route vers Jaipur, visitez la ville abandonnée de Fatehpur Sikri. Arrivée à Jaipur et repos dans votre hôtel.",
-                day_5: "Jour 5", day_5_title: "Visite de Jaipur", day_5_desc: "Passez la journée à explorer Jaipur, y compris le Fort d'Amber, le City Palace, le Hawa Mahal et les marchés locaux.",
-                day_6: "Jour 6", day_6_title: "Jaipur à Bikaner", day_6_desc: "Route vers la ville désertique de Bikaner. Visite de l'impressionnant Fort de Junagarh et promenade dans la vieille ville.",
-                day_7: "Jour 7", day_7_title: "Bikaner à Jaisalmer", day_7_desc: "Voyagez plus profondément dans le désert du Thar pour atteindre Jaisalmer, la ville d'or. Admirez le coucher de soleil sur le fort.",
-                day_8: "Jour 8", day_8_title: "Jaisalmer & Safari dans le désert", day_8_desc: "Visite du Fort de Jaisalmer et du lac Gadisar. Le soir, safari à dos de chameau dans les dunes de Sam.",
-                day_9: "Jour 9", day_9_title: "Jaisalmer à Jodhpur", day_9_desc: "Route vers la ville bleue, Jodhpur. L'après-midi, explorez les marchés locaux autour de la Tour de l'Horloge.",
-                day_10: "Jour 10", day_10_title: "Visite de Jodhpur", day_10_desc: "Visite du majestueux Fort de Mehrangarh, offrant des vues panoramiques, suivi du Jaswant Thada.",
-                day_11: "Jour 11", day_11_title: "Jodhpur à Udaipur via Ranakpur", day_11_desc: "Route vers Udaipur avec un arrêt aux temples jaïns de Ranakpur finement sculptés. Arrivée à la Cité des Lacs.",
-                day_12: "Jour 12", day_12_title: "Visite d'Udaipur", day_12_desc: "Visite du grand City Palace et promenade relaxante en bateau sur le lac Pichola en soirée.",
-                day_13: "Jour 13", day_13_title: "Vol retour vers Delhi", day_13_desc: "Après le petit-déjeuner, transfert à l'aéroport pour votre vol intérieur vers New Delhi. Soirée libre.",
-                day_14: "Jour 14", day_14_title: "Départ", day_14_desc: "Transfert à l'aéroport international pour votre vol retour, avec une valise pleine de souvenirs inoubliables.",
-                btn_full_itinerary: "Télécharger l'itinéraire complet en PDF",
+                day_2: "Jour 2", day_2_title: "Exploration de Old & New Delhi", day_2_desc: "Profitez d'une visite guidée comprenant une balade en rickshaw à Chandni Chowk, Jama Masjid, le Fort Rouge et le Qutub Minar.",
+                day_3: "Jour 3", day_3_title: "Delhi à Agra", day_3_desc: "Route vers Agra le matin. Visitez le grand Fort d'Agra et admirez le coucher de soleil féerique sur le marbre du Taj Mahal.",
+                day_4: "Jour 4", day_4_title: "Agra à Jaipur via Fatehpur Sikri", day_4_desc: "En route vers Jaipur, visitez la cité abandonnée de Fatehpur Sikri. Arrivée à Jaipur et repos dans votre hôtel de charme.",
+                day_5: "Jour 5", day_5_title: "Visite de Jaipur", day_5_desc: "Explorez le Fort d'Amber, le Palais des Vents (Hawa Mahal), le City Palace et terminez par du shopping artisanal.",
+                day_6: "Jour 6", day_6_title: "Jaipur à Bikaner", day_6_desc: "Traversez le désert jusqu'à Bikaner. Visitez la forteresse de Junagarh et flânez dans les ruelles animées de la vieille ville.",
+                day_7: "Jour 7", day_7_title: "Bikaner à Jaisalmer", day_7_desc: "Continuez dans le désert du Thar vers Jaisalmer, la cité d'or. Admirez la forteresse dorée illuminée par le coucher du soleil.",
+                day_8: "Jour 8", day_8_title: "Jaisalmer & Safari dans le désert", day_8_desc: "Visitez le fort habité de Jaisalmer et les havelis. En fin d'après-midi, partez aux dunes de Sam pour un safari à dos de chameau.",
+                day_9: "Jour 9", day_9_title: "Jaisalmer à Jodhpur", day_9_desc: "Route vers la ville bleue de Jodhpur. En soirée, promenez-vous dans les bazars animés d'épices et de textiles.",
+                day_10: "Jour 10", day_10_title: "Visite de Jodhpur", day_10_desc: "Visite du majestueux Fort de Mehrangarh avec vue plongeante sur les toits bleus, suivi des cénotaphes de Jaswant Thada.",
+                day_11: "Jour 11", day_11_title: "Jodhpur à Udaipur via Ranakpur", day_11_desc: "Route vers Udaipur avec un arrêt incontournable aux temples jaïns de Ranakpur et leurs 1 444 piliers sculptés.",
+                day_12: "Jour 12", day_12_title: "Visite d'Udaipur", day_12_desc: "Visitez le somptueux City Palace d'Udaipur et profitez d'une croisière féerique en bateau sur le lac Pichola au coucher du soleil.",
+                day_13: "Jour 13", day_13_title: "Vol retour vers Delhi", day_13_desc: "Transfert à l'aéroport pour votre vol intérieur vers Delhi. Soirée libre pour vos derniers achats ou dîner gastronomique.",
+                day_14: "Jour 14", day_14_title: "Départ", day_14_desc: "Transfert à l'aéroport international pour votre vol retour avec des souvenirs impérissables du Rajasthan royal.",
                 
                 sec_included: "Ce qui est Inclus ?",
                 lbl_included: "Inclus", lbl_not_included: "Non Inclus",
@@ -764,15 +981,23 @@
                 role_sophie: "Spécialiste Inde du Nord", bio_sophie: "Basée à Delhi, j'ai conçu plus de 500 voyages à travers le Rajasthan, garantissant des expériences authentiques.",
                 btn_contact_sophie: "Contacter Sophie",
 
-                // Booking Form
+                trust_score: "Excellent 4.9/5 basé sur 3 450 avis voyageurs",
+                rev_1_title: "Expérience royale inoubliable !", rev_1_desc: "Chaque palais était sélectionné à la perfection. Notre chauffeur privé M. Singh était ponctuel, gentil et très attentionné.",
+                rev_2_title: "14 jours parfaits au Rajasthan", rev_2_desc: "Sophie a su équilibrer parfaitement les visites de monuments et les balades au calme. Le bivouac à Jaisalmer était magique.",
+                rev_3_title: "Professionnel & suivi 24/7", rev_3_desc: "Voyager en famille peut être stressant, mais Mathew Voyages a tout géré à merveille. On s'est sentis en sécurité constante.",
+
+                mag_title: "Magazine de Voyage : Inspirations Rajasthan", mag_sub: "Lisez nos conseils d'experts, guides culturels et astuces pratiques avant votre départ.",
+                mag_all: "Voir tous les articles", read_more: "Lire l'article",
+                blog_1_cat: "Guide Patrimoine", blog_1_title: "Les 7 plus beaux Havelis où séjourner au Rajasthan", blog_1_desc: "Découvrez des demeures historiques transformées en hôtels de charme où vit encore la véritable hospitalité royale.",
+                blog_2_cat: "Vie Nomade", blog_2_title: "Une nuit dans les dunes de Sam : Safari au désert", blog_2_desc: "Tout ce que vous devez savoir pour passer une nuit sous les étoiles du Thar, les balades à dos de chameau et les chants folkloriques.",
+                blog_3_cat: "Artisanat", blog_3_title: "Sur la route des artisans : Impression au tampon à Jaipur", blog_3_desc: "Rencontrez des artisans traditionnels et découvrez les secrets des étoffes imprimées à la main.",
+
                 form_title: "Réservez ou personnalisez ce voyage",
                 form_sub: "Remplissez le formulaire ci-dessous et notre expert vous contactera dans les 24 heures.",
                 form_name: "Nom complet", form_email: "Adresse e-mail", form_phone: "Numéro de téléphone", form_date: "Date de voyage prévue",
                 form_msg: "Vos besoins (Facultatif)", form_submit: "Envoyer la demande",
 
-                // Featured Tours
-                tours_title: "Autres Itinéraires Populaires",
-                tours_sub: "Découvrez d'autres voyages 100% personnalisables créés par nos experts locaux.",
+                tours_title: "Autres Itinéraires Populaires", tours_sub: "Découvrez d'autres voyages 100% personnalisables créés par nos experts locaux.",
                 tag_must_see: "Incontournables", tag_off_path: "Hors des sentiers battus", tag_nature: "Nature & Culture",
                 ft_tour_1_title: "Le Triangle d'Or et les Tigres", ft_tour_1_desc: "Un mélange parfait de culture, d'histoire et de vie sauvage dans le nord de l'Inde.", ft_tour_1_dur: "12 Jours",
                 ft_tour_2_title: "Vallées Cachées du Ladakh", ft_tour_2_desc: "Plongez dans la culture bouddhiste et les paysages de montagne dramatiques.", ft_tour_2_dur: "15 Jours",
